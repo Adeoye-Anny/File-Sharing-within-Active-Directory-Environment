@@ -21,9 +21,10 @@ I configured a file server within the domain to provide centralized file access 
    * Edit the Mapped Drive,
      User Configuration → Preferences → Windows Settings → Drive Maps
      <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/42ee23e4-1858-40b5-832c-53584664ebeb" />
-   * I Link Map Drive to the right OU (USA) and assign the GPO to the Users.
-   
-  
+   * I Linked the Map Drive to the right OU (USA) and assign the GPO to the Users.
+
+6.  On the Windows 11 client, I accessed the SHARED (S) folder successfully.
+     <img width="1920" height="1037" alt="image" src="https://github.com/user-attachments/assets/8fe6de51-6c06-4728-8ba0-3e057c7af3dc" />
 
    
 

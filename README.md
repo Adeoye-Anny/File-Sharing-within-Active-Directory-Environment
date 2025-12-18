@@ -16,12 +16,12 @@ I configured a file server within the domain to provide centralized file access 
    Access was granted based on the user’s group membership, confirming permissions were applied correctly.
     <img width="1920" height="1035" alt="image" src="https://github.com/user-attachments/assets/cae3bac7-c84e-4da2-a2a8-302c2b8e3316" />
     
-5. The Map Network Drive method isn't consistent because When I restart my PC, I have to Map the Network Drive over again. in other to make it easily accessible, I             configured a GPO to automatically map network drives for users.
-   * Create a new GPO under the Group Policy Object, name it Mapped Drive
-   * Edit the Mapped Drive,
-     User Configuration → Preferences → Windows Settings → Drive Maps
+5. Manually mapping network drives is not persistent, as the connection may be lost after a system restart. To ensure consistent and automatic access to shared resources, I    configured a Group Policy Object (GPO) to map network drives for users at logon.
+
+   * I created a new GPO named Mapped Drive under Group Policy Objects and edited it using the following path:
+   * User Configuration → Preferences → Windows Settings → Drive Maps
      <img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/42ee23e4-1858-40b5-832c-53584664ebeb" />
-   * I Linked the Map Drive to the right OU (USA) and assign the GPO to the Users.
+   * This configuration automatically maps the required network drive each time a user signs in, ensuring reliable and centralized access across the domain.
 
 6.  On the Windows 11 client, I accessed the SHARED (S) folder successfully.
      <img width="1920" height="1037" alt="image" src="https://github.com/user-attachments/assets/8fe6de51-6c06-4728-8ba0-3e057c7af3dc" />

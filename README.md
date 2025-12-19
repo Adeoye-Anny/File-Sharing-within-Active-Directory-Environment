@@ -26,10 +26,88 @@ I configured a file server within the domain to provide centralized file access 
 6.  On the Windows 11 client, I accessed the SHARED (S) folder successfully.
      <img width="1920" height="1037" alt="image" src="https://github.com/user-attachments/assets/8fe6de51-6c06-4728-8ba0-3e057c7af3dc" />
 
-   
-
-
-
-
 #### Why This Matters
 This demonstrates my understanding of centralized file management, role-based access control, and the difference between Share permissions and NTFS permissions in an Active Directory environment.
+
+
+
+# Configuring File Server Resource Manager (FSRM)
+I configured File Server Resource Manager (FSRM) to control disk usage and restrict unwanted file types. This helps prevent storage abuse and enforces proper file usage within the Active Directory environment.
+
+### 1. Installing File Server Resource Manager
+   1. I opened Server Manager → Manage → Add Roles and Features.
+   2. I selected Role-based or feature-based installation.
+   3. Under File and Storage Services → File and iSCSI Services, I selected File Server Resource Manager.
+   4. I completed the installation successfully.
+      <img width="1920" height="1037" alt="image" src="https://github.com/user-attachments/assets/e1e8da63-5d49-40af-bb53-b3baabcb7203" />
+
+
+### 2. Creating a Quota Template
+Purpose
+Quota templates limit how much storage users or folders can consume.
+
+#### Steps Performed
+   1. I opened Server Manager → Tools → File Server Resource Manager.
+   2. I navigated to Quota Management → Quota Templates.
+   3. I created a new template:
+      * Template name: Standard User Quota
+      * Limit: 10 GB
+      * Quota type: Hard quota
+   4. I enabled notifications to alert administrators when 80% usage thresholds are reached.
+      <img width="1920" height="1038" alt="image" src="https://github.com/user-attachments/assets/d02c4e69-5323-44c4-a332-fdcdc6c85ad7" />
+
+
+
+### 3. Applying the Quota Template
+   1. Under Quota Management, I selected Create Quota.
+   2. I chose the target shared folder (S:\SHARED).
+   3. I applied the Standard User Quota template.
+      This immediately enforced storage limits on the folder.
+      <img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/d13ee02c-91e8-4fcf-802d-4e7bc81bedef" />
+
+
+
+
+4. Creating a File Screen Template
+Purpose
+File screen templates prevent users from storing unauthorized file types such as videos or executables.
+
+Steps Performed
+In FSRM, I navigated to File Screening Management → File Screen Templates.
+
+I created a new template:
+
+Template name: Block Media Files
+
+Screening type: Active screening
+
+Blocked file groups: Audio and Video Files
+
+I enabled notifications for policy violations.
+
+Screenshot to upload
+
+File Screen Template configuration
+
+5. Applying and Testing File Screening
+I applied the file screen template to the shared user folder.
+
+From a domain-joined Windows 10 client, I attempted to upload a blocked file type.
+
+The action was denied, confirming the policy was enforced correctly.
+
+Screenshot to upload
+
+Access denied message for blocked file
+
+Result
+This configuration demonstrates my ability to:
+
+Control disk usage using quota templates
+
+Prevent unauthorized file storage
+
+Enforce centralized storage policies
+
+Manage file servers in an Active Directory environment
+

@@ -66,48 +66,31 @@ Quota templates limit how much storage users or folders can consume.
       <img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/d13ee02c-91e8-4fcf-802d-4e7bc81bedef" />
 
 
-
-
-4. Creating a File Screen Template
+### 4. Creating a File Screen Template
 Purpose
 File screen templates prevent users from storing unauthorized file types such as videos or executables.
 
-Steps Performed
-In FSRM, I navigated to File Screening Management → File Screen Templates.
+#### Steps Performed
+   1. In FSRM, I navigated to File Screening Management → File Screen Templates.
+   2. I created a new template:
+      Template name: SHARED
+   3. Screening type: Active screening
+   4. Blocked file groups: Audio and Video Files
+   5. I enabled notifications for policy violations.
+      <img width="1920" height="1038" alt="image" src="https://github.com/user-attachments/assets/a86215f3-b40d-4b98-b2b8-862e50be2ceb" />
 
-I created a new template:
-
-Template name: Block Media Files
-
-Screening type: Active screening
-
-Blocked file groups: Audio and Video Files
-
-I enabled notifications for policy violations.
-
-Screenshot to upload
-
-File Screen Template configuration
 
 5. Applying and Testing File Screening
-I applied the file screen template to the shared user folder.
+   I applied the file screen template to the shared user folder.
+   From a domain-joined Windows 11 client, I attempted to upload a blocked file type.
+   The action was denied, confirming the policy was enforced correctly.
 
-From a domain-joined Windows 10 client, I attempted to upload a blocked file type.
 
-The action was denied, confirming the policy was enforced correctly.
 
-Screenshot to upload
-
-Access denied message for blocked file
-
-Result
+## Result
 This configuration demonstrates my ability to:
-
-Control disk usage using quota templates
-
-Prevent unauthorized file storage
-
-Enforce centralized storage policies
-
-Manage file servers in an Active Directory environment
+   1. Control disk usage using quota templates
+   2. Prevent unauthorized file storage
+   3. Enforce centralized storage policies
+   4. Manage file servers in an Active Directory environment
 

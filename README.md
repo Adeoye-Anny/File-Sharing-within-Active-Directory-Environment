@@ -95,24 +95,5 @@ This configuration demonstrates my ability to:
    4. Manage file servers in an Active Directory environment
 
 
-# Windows File Sharing: NFTS Vs Shared, Assigning Folder Permission 
-  ### NTFS Permissions Configuration (Marketing Folder)
-   In this lab, I configured NTFS permissions on the C:\Marketing folder to enforce role-based access control using Active Directory security groups.
-
-### Permissions Applied
-   1. Marketing Intern (ADEOYEANNY\Marketing Intern)
-      * Permission: Read
-      * Purpose: Allows interns to view files without the ability to modify or delete content.
-   2. Administrators (ADEOYEANNY\Administrators)
-      * Permission: Full Control
-      * Purpose: Provides full management access, including file modification and permission changes.
-   3. Users (ADEOYEANNY\Users)
-      * Limited access to prevent unauthorized changes.
-   4. SYSTEM / CREATOR OWNER
-      * Default system permissions required for operating system functionality.
-      <img width="1920" height="1036" alt="image" src="https://github.com/user-attachments/assets/22636264-ea00-4f1a-9a9d-3bbe20d84c13" />
-
-### Key Takeaway
-This configuration demonstrates proper use of NTFS permissions, adherence to the principle of least privilege, and best practice of assigning access through Active Directory security groups rather than individual users. Since NTFS permissions apply both locally and over the network, access remains consistent and secure regardless of how the folder is accessed.
 
 
